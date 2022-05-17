@@ -1,0 +1,68 @@
+<div class="unit-master-container">
+  <div class="header">
+    <h5>Unit Master</h5>
+  </div>
+  <div class="input-field">
+    <div class="input-field-half">
+      <div class="input-name">
+        Unit Name
+      </div>
+      <div class="input-value">
+        <input type="text" id="quantity" [(ngModel)]="unitName">
+      </div>
+    </div>
+    <div class="input-field-half">
+      <div class="input-name">
+        Description
+      </div>
+      <div class="input-value">
+        <input type="text" id="quantity" [(ngModel)]="description">
+      </div>
+    </div>
+    <div class="input-field-half">
+      <div class="input-name">
+        Under Group
+      </div>
+      <div class="input-value">
+        <input type="text" id="quantity" [(ngModel)]="group">
+      </div>
+    </div>
+    <div class="input-field-half">
+      <div class="input-name">
+        UQC
+      </div>
+      <div class="input-value">
+        <input type="text" id="quantity">
+      </div>
+    </div>
+    <div class="info">
+      Mention The Group Each Time While Enter The Unit
+    </div>
+  </div>
+  <div class="unitMasterGrid">
+    <igx-grid #unitMasterRef [data]="unitMasterGridData" width="100%" height="100%" columnPinning="false" [rowSelection]="'single'"
+      [hideRowSelectors]="true" toolbarTitle="Mention the Group each time while mentioning the Unit"
+      [emptyGridMessage]="'Loading Defect Details  ... Please Wait '">
+      <igx-column [field]="'name'" [header]="'Name'" [movable]="false" [resizable]="true">
+      </igx-column>
+      <igx-column [field]="'group'" [header]="'Group'" [movable]="false" [resizable]="true">
+      </igx-column>
+      <igx-column [field]="'desc'" [header]="'Description'" [movable]="false" [resizable]="true">
+      </igx-column>
+    </igx-grid>
+  </div>
+  <div class="active-buttons">
+    <button mat-raised-button (click)="add()">
+      <mat-icon>add</mat-icon>
+    </button>
+    <button mat-raised-button (click)="modify()">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button mat-raised-button (click)="delete()">
+      <mat-icon>delete</mat-icon>
+    </button>
+    <button mat-raised-button (click)="exit()">
+      <mat-icon>exit_to_app</mat-icon>
+    </button>
+  </div>
+</div>
